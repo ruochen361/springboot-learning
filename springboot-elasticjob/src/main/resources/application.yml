@@ -1,0 +1,17 @@
+server:
+    port: 8088
+
+elasticjob:
+    serverlists: 10.100.19.167:2181
+    namespace: test-job
+
+Job:
+    #定时添加定时任务 配置
+    cron.dynamicAddJob: 0 0/5 * * * ? *
+    shardingTotalCount.dynamicAddJob: 1
+    shardingItemParameters.dynamicAddJob:
+    jobParameters.dynamicAddJob:
+
+#日志配置路径
+logging:
+  config: classpath:xml/logback.xml
